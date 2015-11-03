@@ -18,12 +18,7 @@ class Messages extends React.Component {
 		super();
 
 		this.state = {
-			messages: [
-				{ name: 'Fred', msg: 'Hi!' },
-				{ name: 'Fred', msg: 'Hi!' },
-				{ name: 'Fred', msg: 'Hi!' },
-				{ name: 'Fred', msg: 'Hi!' }
-			]
+			messages: []
 		};
 	}
 
@@ -36,7 +31,13 @@ class Messages extends React.Component {
 	}
 
 	onChange() {
-		alert('Chatroom store was changed');
+		//alert('Chatroom store was changed');
+		var store = Fluky.getState('Chatroom');
+
+		// Update component's state to re-render
+		this.setState({
+			messages: store.messages
+		});
 	}
 
 	render() {

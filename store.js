@@ -5,6 +5,7 @@ export default function *() {
 	});
 
 	this.on('store.Chatroom.addMessage', function *(name, msg) {
+
 		state.messages.push({
 			name: name,
 			msg: msg
