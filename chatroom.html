@@ -4,68 +4,10 @@
 		<script src="https://fb.me/react-with-addons-0.14.0.js"></script> 
 		<script src="https://fb.me/react-dom-0.14.0.js"></script>
 		<script src='http://cdn.jsdelivr.net/jquery/2.1.4/jquery.min.js'></script>
-		<script src="node_modules/babel-core/browser.js"></script>
-		<script type="text/babel">
-			class Messages extends React.Component {
-				constructor() {
-					super();
-
-					this.state = {
-						messages: [
-							{ name: 'Fred', msg: 'Hi!' },
-							{ name: 'Fred', msg: 'Hi!' },
-							{ name: 'Fred', msg: 'Hi!' },
-							{ name: 'Fred', msg: 'Hi!' }
-						]
-					};
-				}
-
-				render() {
-					var style = {
-						border: '1px solid black',
-						width: '400px',
-						height: '300px'
-					};
-
-					var list = [];
-					for (var index in this.state.messages) {
-						var obj = this.state.messages[index];
-
-						list.push(
-							<div>
-								{obj.name}: {obj.msg}
-							</div>
-						);
-					}
-
-					return (
-						<div style={style}>{list}</div>
-					);
-				}
-			}
-
-			class InputBox extends React.Component {
-				render() {
-					return (
-						<div>
-							<input type='text' />
-							<input type='button' value='Send' />
-						</div>
-					);
-				}
-			}
-
-			ReactDOM.render(
-				<div>
-					<Messages />
-					<InputBox />
-				</div>,
-				document.getElementById('example')
-			);
-		</script>
 	</head>
 	<body>
 		<h1>Hello World</h1>
 		<div id="example"></div>
+		<script src="js/bundle.js"></script>
 	</body>
 </html>
